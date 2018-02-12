@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Homework 11</title>
+    <link rel="stylesheet" href="8.css">
+</head>
+
+<body>
+<h3>
+    Написать приложение для работы с REST сервисом http://fecore.net.ua/rest/, реализовать следующий функционал:
+   
+</h3>
+<ul>
+  <li>функция getUsers должна получать текущий список всех пользователей в БД.</li>
+  <li>функция addUser должна записывать в БД юзера с полями name и score.</li>
+  <li>функция removeUser должна удалять из БД юзера по id.</li>
+  <li>функция updateUser должна обновлять данные пользователя по id.</li>
+</ul>
+<h3>
+    Сделать минимальный графический интерфейс в виде панели с полями и кнопками, а так же панелью для вывода результатов операций с REST сервисом.
+
+</h3>
+
+ 
+    <table class="userTable">
+      <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Score</th>
+          </tr>
+      </thead>
+      <tbody id="tBody"></tbody>
+    </table>
+  
+<!-- Шаблон одной строки для tbody -->
+    <script type="text/template" id="table-row">
+      <tr scope="row">
+          <td><%- id%></td>
+          <td><%- name%></td>
+          <td><%- score%></td>
+      </tr>
+    </script>
+<!--     конец скрипта LoDash -->
+      <button id="out1GetUsers">Get all users</button>
+    <br>
+
+    <button id="out2AddUser">Add user</button>
+    <form id="user">
+      <input type="text" id="userName" placeholder="Input new name"><input type="" id="userScore" placeholder="Input new score">
+    </form>
+    <button id="out3RemoveUser">Remove user</button>
+    <form id="remove">
+      <input type="text" id="removeId" placeholder="Delete current ID">
+    </form>
+  <button id="out4UpdateUser">Update user</button>
+    <form id="change">
+      <input type="text" id="changeUserId" placeholder="Update current ID"><input type="text" id="changeUserName" placeholder="Update current name"><input type="text" id="changeUserScore" placeholder="Update current score">
+    </form>
+    
+
+
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+ 
+    <script src="8.js"></script>
+</body>
+
+</html>
